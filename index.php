@@ -112,18 +112,26 @@
     // - the user clicks on an app notification created by a service worker
     //   `messaging.setBackgroundMessageHandler` handler.
     messaging.onMessage((payload) => {
-        const { title } = payload.data;
-        toastr.info(title);
-        console.log('Message received. ', payload);
-        // ...
+        const { title, body, icon, image, click_action } = payload.data;
+
+        const options = {
+            title, body, icon, image, data : {
+                time: new Date(Date.now()).toString(),
+                click_action: click_action
+            }
+        }
+
+        var myNotification = new Notification(title, options);
+
+        // toastr.success(body);
+        // console.log('Message received. ', payload);
     });
+
+    
 
     </script>
 </head>
 <body>
     <h1>FCM</h1>
-    <div class="toaster">
-
-    </div>
 </body>
 </html>

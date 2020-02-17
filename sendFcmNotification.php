@@ -12,7 +12,7 @@ $message = array(
     'title' => 'My First Notification',
     'body'  => 'Notification from FredFrog',
     'icon'  => 'favicon.ico',
-    'image' => 'https://linkclip.in/logo.png',
+    'image' => 'http://localhost/firebase-push-notification/logo.png',
     'click_action' => 'https://linkclip.in/signup.php'
 );
 
